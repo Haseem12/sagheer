@@ -1,0 +1,290 @@
+:root {
+    --lab-blue: #0066ff;
+    --lab-blue-dark: #0052cc;
+    --lab-charcoal: #2a2a2a;
+    --lab-yellow: #ffcc00;
+    --lab-yellow-dark: #e6b800;
+    --lab-gray: #f5f5f5;
+    --lab-grid: rgba(0, 102, 255, 0.1);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.lab-grid-bg {
+    background-image: 
+        linear-gradient(var(--lab-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--lab-grid) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.lab-accent-blue {
+    color: var(--lab-blue);
+}
+
+.lab-accent-yellow {
+    color: var(--lab-yellow);
+}
+
+.lab-bg-blue {
+    background-color: var(--lab-blue);
+}
+
+.lab-bg-yellow {
+    background-color: var(--lab-yellow);
+}
+
+.lab-bg-charcoal {
+    background-color: var(--lab-charcoal);
+}
+
+.lab-hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lab-hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 102, 255, 0.15);
+}
+
+.page-section {
+    display: none;
+}
+
+.page-section.active {
+    display: block;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.pulse-animation {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.bounce-animation {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 53%, 80%, 100% { transform: translateY(0); }
+    40%, 43% { transform: translateY(-30px); }
+    70% { transform: translateY(-15px); }
+    90% { transform: translateY(-4px); }
+}
+
+.hidden {
+    display: none;
+}
+
+.step-content {
+    display: none;
+}
+
+.step-content.active {
+    display: block;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--lab-blue);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--lab-blue-dark);
+}
+
+/* Form styles */
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--lab-blue);
+    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+
+.form-select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    background-color: white;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5rem 1.5rem;
+    padding-right: 2.5rem;
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    resize: vertical;
+    min-height: 6rem;
+}
+
+.form-checkbox {
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.25rem;
+    accent-color: var(--lab-blue);
+}
+
+.btn-primary {
+    background-color: var(--lab-blue);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--lab-blue-dark);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: var(--lab-blue);
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--lab-blue);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--lab-blue);
+    color: white;
+}
+
+/* Modal styles */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 0.5rem;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Job filter styles */
+.job-filter.active {
+    background-color: var(--lab-blue);
+    color: white;
+}
+
+.job-filter:not(.active):hover {
+    background-color: #f3f4f6;
+}
+
+/* Partnership type selection */
+.partnership-type.selected {
+    border: 2px solid var(--lab-blue);
+    background-color: rgba(0, 102, 255, 0.05);
+}
+
+/* Project filter styles */
+.filter-btn.active {
+    background-color: var(--lab-blue);
+    color: white;
+}
+
+.filter-btn:not(.active) {
+    background-color: white;
+    color: #6b7280;
+}
+
+.filter-btn:not(.active):hover {
+    background-color: #f3f4f6;
+}
+
+/* Step indicator styles */
+.step-indicator.active {
+    background-color: var(--lab-blue);
+    color: white;
+}
+
+.step-indicator.completed {
+    background-color: var(--lab-blue);
+    color: white;
+}
+
+.step-line.active {
+    background-color: var(--lab-blue);
+}
+
+/* Animation classes */
+.slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.3s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
